@@ -11,26 +11,26 @@ from runner.koan import *
 class AboutDictionaries(Koan):
     def test_creating_dictionaries(self):
         empty_dict = dict()
-        self.assertEqual(dict, type(empty_dict))
-        self.assertEqual(dict(), empty_dict)
-        self.assertEqual(__, len(empty_dict))
+        self.assertEqual(dict, type(empty_dict)) #true
+        self.assertEqual(dict(), empty_dict) #true
+        self.assertEqual(0, len(empty_dict))
 
     def test_dictionary_literals(self):
         empty_dict = {}
-        self.assertEqual(dict, type(empty_dict))
-        babel_fish = {'one': 'uno', 'two': 'dos'}
-        self.assertEqual(__, len(babel_fish))
+        self.assertEqual(dict, type(empty_dict)) #true
+        babel_fish = {'one': 'uno', 'two': 'dos'} #dictionaries have keys. Hashes one and puts uno there. Hashes two puts dos there. 
+        self.assertEqual(2, len(babel_fish))
 
     def test_accessing_dictionaries(self):
         babel_fish = {'one': 'uno', 'two': 'dos'}
-        self.assertEqual(__, babel_fish['one'])
-        self.assertEqual(__, babel_fish['two'])
+        self.assertEqual('uno', babel_fish['one'])
+        self.assertEqual('dos', babel_fish['two'])
 
     def test_changing_dictionaries(self):
         babel_fish = {'one': 'uno', 'two': 'dos'}
         babel_fish['one'] = 'eins'
 
-        expected = {'two': 'dos', 'one': __}
+        expected = {'two': 'dos', 'one': 'eins'}
         self.assertEqual(expected, babel_fish)
 
     def test_dictionary_is_unordered(self):
